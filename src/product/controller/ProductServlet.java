@@ -148,10 +148,11 @@ public class ProductServlet extends HttpServlet {
     private void showUpdateProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = this.productService.selectProductById(id);
+        List<Product> listProductCategory = this.productService.selectAllProduct();
 
         request.setAttribute("product", product);
 
-        request.setAttribute("option",product.getCategory());
+        request.setAttribute("listCategory",listProductCategory);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/createAndEdit.jsp");
         dispatcher.forward(request, response);

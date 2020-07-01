@@ -71,7 +71,7 @@ input[type = "submit"]{
     background-color: #add8e6;
 }
 
-table tr td label{
+.hide{
     /*border: 1px solid #cc0000;*/
     overflow: hidden;
     text-overflow: ellipsis;

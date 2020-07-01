@@ -62,7 +62,7 @@
             <td>${pro.getPrice()}</td>
             <td>${pro.getQuantity()}</td>
             <td>${pro.getColor()}</td>
-            <td><label>${pro.getDescription()}</label></td>
+            <td><p class="hide">${pro.getDescription()}</p></td>
             <td>${pro.getCategory()}</td>
             <td><a href="/products?action=edit&id=${pro.getId()}"><button type="button">Edit</button></a></td>
             <td><a href="/products?action=delete&id=${pro.getId()}"><button type="button">Delete</button></a></td>

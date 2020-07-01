@@ -59,8 +59,13 @@
 <%--                        <option value="car">Car</option>--%>
 <%--                    </select>--%>
                     <select name="category">
-                        <c:forEach var="item" items="${dept}">
-                            <option value="${item.key}" ${item.key == option ? 'selected="selected"' : ''}>${item.value}</option>
+                        <c:forEach items="${requestScope['listCategory']}" var="category">
+                            <c:if test = "${category.getCategory().equals(requestScope.product.getCategory())}">
+                                <option value="${category.getCategory()}"  selected>${requestScope.product.getCategory()}</option>
+                            </c:if>
+                            <c:if test = "${!category.getCategory().equals(requestScope.product.getCategory())}">
+                                <option value="${category.getCategory()}"  >${category.getCategory()}</option>
+                            </c:if>
                         </c:forEach>
                     </select>
                 </td>
